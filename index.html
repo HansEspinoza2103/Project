@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        #no {
+            background-color: #999;
+            color: white;
+            position: absolute;
+        }
+        #image {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+    <img id="image" src="https://cdn.pixabay.com/photo/2017/06/08/16/39/couple-2384066_1280.jpg" alt="Imagen romántica">
+    <div class="buttons">
+        <button id="yes" onclick="mensajeBonito()">Sí</button>
+        <button id="no" onmouseover="moverBoton()">No</button>
+    </div>
+
+    <script>
+        function moverBoton() {
+            const botonNo = document.getElementById('no');
+            const maxX = window.innerWidth - botonNo.clientWidth;
+            const maxY = window.innerHeight - botonNo.clientHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            botonNo.style.left = `${randomX}px`;
+            botonNo.style.top = `${randomY}px`;
+        }
+
+        function mensajeBonito() {
+            document.body.innerHTML = "<h1>¡Sabía que dirías que sí! ❤️</h1><p>Eres lo mejor que me ha pasado. ¡Te amo! 💕</p>";
+        }
+    </script>
+</body>
+</html>
